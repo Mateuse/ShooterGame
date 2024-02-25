@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxx4mfms4gkqb"]
+
+[ext_resource type="PackedScene" uid="uid://b1udofqi3vcii" path="res://scenes/levels/charater.tscn" id="2_gjmq0"]
+[ext_resource type="PackedScene" uid="uid://b30ldy00iuqk7" path="res://scenes/levels/drone.tscn" id="3_3s5jd"]
+[ext_resource type="Texture2D" uid="uid://brteq64qeua2b" path="res://graphics/objects/box/base.png" id="4_clhoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80l2i"]
+size = Vector2(403, 179)
+
+[node name="Level" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(851, 453)
+texture = ExtResource("4_clhoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 3
+position = Vector2(851.5, 453.5)
+shape = SubResource("RectangleShape2D_80l2i")
+
+[node name="Character" parent="." groups=["Player"] instance=ExtResource("2_gjmq0")]
+position = Vector2(387, 344)
+
+[node name="Drone" parent="." instance=ExtResource("3_3s5jd")]
+position = Vector2(394, 142)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxx4mfms4gkqb"]
+
+[ext_resource type="Script" path="res://scenes/levels/MainCharacterMovement.gd" id="1_1dduw"]
+[ext_resource type="Texture2D" uid="uid://cac3t6n7qfvkk" path="res://graphics/player/player.png" id="2_238pp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yi80n"]
+radius = 36.0
+height = 100.0
+
+[node name="Level" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_1dduw")
+speed = null
+rotation_speed = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+z_index = 1
+position = Vector2(473, 235)
+shape = SubResource("CapsuleShape2D_yi80n")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(472, 233)
+scale = Vector2(0.573248, 0.481441)
+texture = ExtResource("2_238pp")
